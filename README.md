@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=39D353&center=true&vCenter=true&width=600&height=50&lines=System.init(%22vivekjadhav07%22);;Welcome+to+my+Terminal+Profile;Full+Stack+%26+Android+Developer" alt="Terminal Header Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=39D353&center=true&vCenter=true&width=600&height=50&lines=System.init(%22Vivek-2108%22);;Welcome+to+my+Terminal+Profile;Full+Stack+%26+Android+Developer" alt="Terminal Header Typing SVG" />
 </p>
 
 <br>
 
 <p align="center">
   <h3><code>$ cat contributions.sh</code></h3>
-  <a href="https://github.com/vivekjadhav07">
+  <a href="https://github.com/Vivek-2108">
     <img src="contrib-heatmap.svg" alt="Live GitHub Contribution Heatmap" width="100%" />
   </a>
 </p>
@@ -51,7 +51,7 @@
 
 ## 🖥️ Terminal Profile Architecture & Self-Hosting Guide
 
-This repository contains a fully automated, self-hosted, terminal-themed GitHub Profile README for **[vivekjadhav07](https://github.com/vivekjadhav07)**.
+This repository contains a fully automated, self-hosted, terminal-themed GitHub Profile README for **[Vivek-2108](https://github.com/Vivek-2108)**.
 
 All animated visuals are vector SVG graphics generated locally via Python scripts with embedded CSS/SMIL keyframe animations. It uses **zero JavaScript**, **no third-party stats services**, and **no GitHub Personal Access Tokens**.
 
@@ -60,7 +60,7 @@ All animated visuals are vector SVG graphics generated locally via Python script
 ### 📂 Repository Structure
 
 ```
-vivekjadhav07/
+Vivek-2108/
 │
 ├── README.md                # Terminal profile landing page
 ├── ascii.svg                # Self-typing animated ASCII portrait
@@ -98,8 +98,8 @@ vivekjadhav07/
 #### 2. Environment Setup
 ```bash
 # Clone repository
-git clone https://github.com/vivekjadhav07/vivekjadhav07.git
-cd vivekjadhav07
+git clone https://github.com/Vivek-2108/Vivek-2108.git
+cd Vivek-2108
 
 # Create and activate virtual environment
 python3 -m venv .venv
@@ -137,7 +137,7 @@ python scripts/render_heatmap_svg.py
 | **`prep_photo.py`** | Uses `rembg` AI model to eliminate backgrounds, applies OpenCV CLAHE contrast enhancement, converts image to grayscale, and composites over a solid canvas. | **In:** `assets/profile.jpg`<br>**Out:** `assets/prepared.png` |
 | **`make_ascii_svg.py`** | Maps image pixels to density-matched ASCII characters. Embeds staggered CSS row keyframe animations (`@keyframes typeRow`) for a left-to-right typing effect. | **In:** `assets/prepared.png`<br>**Out:** `ascii.svg` |
 | **`make_info_card.py`** | Reads profile metadata from a Python dictionary and outputs a terminal card with line-by-line slide/fade animations and color badges. | **In:** `PROFILE_DATA` dict<br>**Out:** `info-card.svg` |
-| **`fetch_contributions.py`** | Web scrapes `https://github.com/users/vivekjadhav07/contributions` via `requests` and `BeautifulSoup`. Computes total contributions, active streaks, and max streaks without tokens. | **In:** GitHub Public HTML<br>**Out:** `data/contributions.json` |
+| **`fetch_contributions.py`** | Web scrapes `https://github.com/users/Vivek-2108/contributions` via `requests` and `BeautifulSoup`. Computes total contributions, active streaks, and max streaks without tokens. | **In:** GitHub Public HTML<br>**Out:** `data/contributions.json` |
 | **`render_heatmap_svg.py`** | Generates a 53-week vector heatmap calendar with rounded grid cells, dark mode green palette, metric summary boxes, and a staggered diagonal reveal animation. | **In:** `data/contributions.json`<br>**Out:** `contrib-heatmap.svg` |
 
 ---
@@ -145,7 +145,7 @@ python scripts/render_heatmap_svg.py
 ### 🎨 Customization Guide
 
 #### 1. Change Neofetch Card Details
-Open [`scripts/make_info_card.py`](file:///home/vivek-jadhav/Desktop/Github%20stuff/vivekjadhav07/scripts/make_info_card.py) and modify the `PROFILE_DATA` dictionary:
+Open [`scripts/make_info_card.py`](file:///home/vivek-jadhav/Desktop/Github%20stuff/Vivek-2108/scripts/make_info_card.py) and modify the `PROFILE_DATA` dictionary:
 ```python
 PROFILE_DATA = {
     "whoami": "your_username",
@@ -161,11 +161,11 @@ Then run: `python scripts/make_info_card.py`
 
 #### 2. Change Profile Photo & ASCII Resolution
 - Replace `assets/profile.jpg` with your own photo.
-- In [`scripts/make_ascii_svg.py`](file:///home/vivek-jadhav/Desktop/Github%20stuff/vivekjadhav07/scripts/make_ascii_svg.py), adjust `DEFAULT_CHAR_WIDTH` (default `58`) or character ramp `ASCII_RAMP`.
+- In [`scripts/make_ascii_svg.py`](file:///home/vivek-jadhav/Desktop/Github%20stuff/Vivek-2108/scripts/make_ascii_svg.py), adjust `DEFAULT_CHAR_WIDTH` (default `58`) or character ramp `ASCII_RAMP`.
 - Run `python scripts/prep_photo.py && python scripts/make_ascii_svg.py`.
 
 #### 3. Customize Heatmap Color Palette
-In [`scripts/render_heatmap_svg.py`](file:///home/vivek-jadhav/Desktop/Github%20stuff/vivekjadhav07/scripts/render_heatmap_svg.py), tweak `COLOR_MAP` to use custom HSL or Hex colors.
+In [`scripts/render_heatmap_svg.py`](file:///home/vivek-jadhav/Desktop/Github%20stuff/Vivek-2108/scripts/render_heatmap_svg.py), tweak `COLOR_MAP` to use custom HSL or Hex colors.
 
 ---
 

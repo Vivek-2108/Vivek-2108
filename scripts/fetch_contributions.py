@@ -20,7 +20,7 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT_DIR / "data"
 OUTPUT_JSON = DATA_DIR / "contributions.json"
 
-USERNAME = "vivekjadhav07"
+USERNAME = "Vivek-2108"
 CONTRIBUTIONS_URL = f"https://github.com/users/{USERNAME}/contributions"
 USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 

@@ -124,7 +124,7 @@ def generate_ascii_svg(ascii_lines: list[str], output_path: Path) -> None:
     svg_parts.append('<circle class="dot-yellow" cx="34" cy="18" r="5" />')
     svg_parts.append('<circle class="dot-green" cx="50" cy="18" r="5" />')
     # Terminal Title Text
-    title_str = xml_escape.escape("vivekjadhav07@terminal:~ $ cat profile_portrait.txt")
+    title_str = xml_escape.escape("Vivek-2108@terminal:~ $ cat profile_portrait.txt")
     svg_parts.append(f'<text class="title" x="68" y="22">{title_str}</text>')
 
     # ASCII Text Lines Rendering

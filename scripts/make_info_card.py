@@ -16,7 +16,7 @@ OUTPUT_SVG = ROOT_DIR / "info-card.svg"
 
 # Profile Data Dictionary - Modify fields here to customize your Neofetch Card!
 PROFILE_DATA = {
-    "whoami": "vivekjadhav07",
+    "whoami": "Vivek-2108",
     "name": "Vivek Jadhav",
     "role": "Full Stack & Android Developer",
     "education": "Information Technology / CS",
@@ -124,7 +124,7 @@ def generate_info_card_svg(data: dict, output_path: Path) -> None:
     svg_parts.append('<circle class="dot-yellow" cx="34" cy="18" r="5" />')
     svg_parts.append('<circle class="dot-green" cx="50" cy="18" r="5" />')
     
-    window_title = xml_escape.escape("vivekjadhav07@terminal:~ $ neofetch")
+    window_title = xml_escape.escape("Vivek-2108@terminal:~ $ neofetch")
     svg_parts.append(f'<text class="title" x="68" y="22">{window_title}</text>')
 
     # Content Rendering

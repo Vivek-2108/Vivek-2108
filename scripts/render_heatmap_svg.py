@@ -150,7 +150,7 @@ def generate_heatmap_svg(data: dict, output_path: Path) -> None:
     svg_parts.append('<circle class="dot-yellow" cx="34" cy="18" r="5" />')
     svg_parts.append('<circle class="dot-green" cx="50" cy="18" r="5" />')
 
-    window_title = xml_escape.escape("vivekjadhav07@terminal:~ $ cat contributions.sh")
+    window_title = xml_escape.escape("Vivek-2108@terminal:~ $ cat contributions.sh")
     svg_parts.append(f'<text class="title" x="68" y="22">{window_title}</text>')
 
     # Stats Summary Cards (Top Section)

@@ -25,6 +25,14 @@ OUTPUT_PATH = ROOT_DIR / "assets" / "prepared.png"
 
 def prepare_photo(input_path: Path, output_path: Path) -> None:
     """Preprocess image with background removal, compositing, and CLAHE contrast enhancement."""
+    # Support .png, .jpg, .jpeg automatically
+    if not input_path.exists():
+        for ext in [".png", ".jpeg", ".jpg"]:
+            alt_path = input_path.with_suffix(ext)
+            if alt_path.exists():
+                input_path = alt_path
+                break
+
     if not input_path.exists():
         print(f"Error: Input photo file '{input_path}' does not exist.", file=sys.stderr)
         sys.exit(1)

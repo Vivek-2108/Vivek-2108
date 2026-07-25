@@ -2,110 +2,108 @@
 """
 scripts/render_heatmap_svg.py
 
-Reads data/contributions.json and generates `contrib-heatmap.svg` featuring:
-- 53-week GitHub contribution calendar layout with rounded cells.
-- Terminal theme header with live stats (Total Contributions, Current Streak, Longest Streak).
-- Animated diagonal cell reveal using CSS keyframes and staggered delays.
-- Month and day labels with Less -> More color legend.
+Generates an animated vector SVG calendar (`contrib-heatmap.svg`) based on GitHub contribution graph dataset.
+Features rounded calendar cells, metric summary boxes, diagonal reveal animations, and dark GitHub palette.
 """
 
 import json
 import sys
 import xml.sax.saxutils as xml_escape
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
+from config import CONTRIBUTIONS_JSON, GITHUB_USERNAME, HEATMAP_SVG
 
-# Paths
-ROOT_DIR = Path(__file__).resolve().parent.parent
-INPUT_JSON = ROOT_DIR / "data" / "contributions.json"
-OUTPUT_SVG = ROOT_DIR / "contrib-heatmap.svg"
-
-# Color Palette - GitHub Dark Mode Green Theme
+# Dark Mode Color Palette
 COLOR_MAP = {
-    0: "#161b22",  # Empty cell
-    1: "#0e4429",  # Low
-    2: "#006d32",  # Medium-low
-    3: "#26a641",  # Medium-high
-    4: "#39d353",  # High
-}
-
-STROKE_MAP = {
-    0: "#21262d",
+    0: "#161b22",
     1: "#0e4429",
     2: "#006d32",
     3: "#26a641",
     4: "#39d353",
 }
 
-MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+CELL_SIZE = 11
+CELL_GAP = 3
+HEADER_HEIGHT = 36
+PADDING_X = 22
+PADDING_Y = 16
 
 
-def load_contributions_data(input_path: Path) -> dict:
-    """Load json data from input file."""
-    if not input_path.exists():
-        print(f"Error: Contributions data file '{input_path}' not found.", file=sys.stderr)
-        sys.exit(1)
+def load_contributions(filepath: Path) -> dict:
+    """Load JSON contribution dataset or return fallback empty dict."""
+    if not filepath.is_file():
+        print(f"Warning: Contribution file not found at {filepath}", file=sys.stderr)
+        return {}
 
-    with open(input_path, "r", encoding="utf-8") as f:
+    with open(filepath, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-def generate_heatmap_svg(data: dict, output_path: Path) -> None:
-    """Render animated SVG heatmap from contribution data."""
+def build_calendar_grid(days: list[dict]) -> tuple[list[list[dict]], list[tuple[int, str]]]:
+    """Group 365 daily objects into 53 weekly columns of 7 days (Sunday to Saturday)."""
+    if not days:
+        return [], []
+
+    date_dict = {d["date"]: d for d in days}
+    sorted_dates = sorted(date_dict.keys())
+    start_dt = datetime.strptime(sorted_dates[0], "%Y-%m-%d")
+    end_dt = datetime.strptime(sorted_dates[-1], "%Y-%m-%d")
+
+    curr_dt = start_dt - timedelta(days=(start_dt.weekday() + 1) % 7)
+
+    weeks = []
+    month_labels = []
+
+    current_week = []
+    week_idx = 0
+    last_month = None
+
+    while curr_dt <= end_dt or len(current_week) > 0:
+        d_str = curr_dt.strftime("%Y-%m-%d")
+        month_str = curr_dt.strftime("%b")
+
+        if curr_dt.day <= 7 and month_str != last_month:
+            month_labels.append((week_idx, month_str))
+            last_month = month_str
+
+        day_obj = date_dict.get(d_str, {"date": d_str, "count": 0, "level": 0})
+        current_week.append(day_obj)
+
+        if len(current_week) == 7:
+            weeks.append(current_week)
+            current_week = []
+            week_idx += 1
+
+        curr_dt += timedelta(days=1)
+
+        if curr_dt > end_dt + timedelta(days=7) and len(current_week) == 0:
+            break
+
+    return weeks, month_labels
+
+
+def generate_heatmap_svg(data: dict, output_path: Path = HEATMAP_SVG) -> None:
+    """Generate animated contribution graph heatmap SVG with CSS keyframe transitions."""
     days = data.get("days", [])
     total_contribs = data.get("total_contributions", 0)
     current_streak = data.get("current_streak", 0)
     longest_streak = data.get("longest_streak", 0)
 
-    # Layout dimensions & coordinates
-    width = 830
+    weeks, month_labels = build_calendar_grid(days)
+    num_weeks = max(len(weeks), 53)
+
+    grid_width = num_weeks * (CELL_SIZE + CELL_GAP)
+    width = PADDING_X * 2 + grid_width + 40
     header_bar_height = 36
-    stats_bar_height = 42
-    padding_x = 35
-    grid_start_y = header_bar_height + stats_bar_height + 30
-    cell_size = 11
-    cell_gap = 3
-    step = cell_size + cell_gap  # 14px step
+    stats_card_height = 42
 
-    # Calculate grid bounds
-    # Organise days into 53 weeks x 7 days
-    num_weeks = 53
-    grid_cells = []
-    month_labels = []
-
-    last_month = None
-
-    for idx, day_info in enumerate(days):
-        col = idx // 7
-        row = idx % 7
-
-        if col >= num_weeks:
-            break
-
-        # Check for month label at the start of a week
-        date_str = day_info.get("date", "")
-        if date_str:
-            dt = datetime.strptime(date_str, "%Y-%m-%d")
-            month_num = dt.month
-            if row == 0 and month_num != last_month:
-                month_labels.append((col, MONTH_NAMES[month_num - 1]))
-                last_month = month_num
-
-        grid_cells.append({
-            "col": col,
-            "row": row,
-            "date": date_str,
-            "count": day_info.get("count", 0),
-            "level": day_info.get("level", 0),
-        })
-
-    grid_height = (7 * step)
-    footer_height = 40
-    height = grid_start_y + grid_height + footer_height
+    calendar_y_start = header_bar_height + PADDING_Y + stats_card_height + 24
+    grid_height = 7 * (CELL_SIZE + CELL_GAP)
+    height = calendar_y_start + grid_height + PADDING_Y + 16
 
     svg_parts = []
     svg_parts.append(
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}">'
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="{height}">'
     )
     svg_parts.append("<defs>")
     svg_parts.append("  <style>")
@@ -117,43 +115,36 @@ def generate_heatmap_svg(data: dict, output_path: Path) -> None:
     svg_parts.append("    .dot-yellow { fill: #ffbd2e; }")
     svg_parts.append("    .dot-green { fill: #27c93f; }")
     
-    # Stats card fonts
-    svg_parts.append("    .stat-label { font-family: 'Fira Code', monospace; font-size: 10px; fill: #8b949e; font-weight: 500; }")
-    svg_parts.append("    .stat-val { font-family: 'Fira Code', monospace; font-size: 14px; fill: #39d353; font-weight: 700; }")
-    svg_parts.append("    .stat-box { fill: #161b22; stroke: #21262d; rx: 6px; }")
+    svg_parts.append("    .stat-card { fill: #161b22; rx: 6px; ry: 6px; stroke: #21262d; stroke-width: 1px; }")
+    svg_parts.append("    .stat-label { font-family: 'Fira Code', monospace; font-size: 9.5px; fill: #8b949e; font-weight: 600; }")
+    svg_parts.append("    .stat-val { font-family: 'Fira Code', monospace; font-size: 13px; fill: #39d353; font-weight: 700; }")
     
-    # Axis & legend text
     svg_parts.append("    .lbl { font-family: 'Fira Code', monospace; font-size: 10px; fill: #7d8590; }")
+    svg_parts.append("    .day-cell { rx: 2px; ry: 2px; opacity: 0; animation: cellScale 0.3s ease-out forwards; }")
     
-    # Heatmap Cell Animations: Diagonal pop & scale-in
-    svg_parts.append("    .cell { transform-origin: center; opacity: 0; animation: diagReveal 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }")
-    svg_parts.append("    @keyframes diagReveal {")
-    svg_parts.append("      0% { opacity: 0; transform: scale(0.2); }")
+    svg_parts.append("    @keyframes cellScale {")
+    svg_parts.append("      0% { opacity: 0; transform: scale(0.3); }")
     svg_parts.append("      100% { opacity: 1; transform: scale(1); }")
     svg_parts.append("    }")
 
-    # Generate CSS rules for diagonal animation delays
-    for c in range(num_weeks):
-        for r in range(7):
-            delay = round((c * 0.015) + (r * 0.015), 3)
-            svg_parts.append(f"    .d-{c}-{r} {{ animation-delay: {delay}s; }}")
+    for w_idx in range(num_weeks):
+        for d_idx in range(7):
+            delay = round((w_idx * 0.012) + (d_idx * 0.008), 3)
+            svg_parts.append(f"    .c-{w_idx}-{d_idx} {{ animation-delay: {delay}s; transform-origin: center; }}")
 
     svg_parts.append("  </style>")
     svg_parts.append("</defs>")
 
-    # Main Card Frame
     svg_parts.append(f'<rect class="bg" width="{width}" height="{height}" />')
-
-    # Header Bar
     svg_parts.append(f'<rect class="header" width="{width}" height="{header_bar_height}" />')
     svg_parts.append('<circle class="dot-red" cx="18" cy="18" r="5" />')
     svg_parts.append('<circle class="dot-yellow" cx="34" cy="18" r="5" />')
     svg_parts.append('<circle class="dot-green" cx="50" cy="18" r="5" />')
 
-    window_title = xml_escape.escape("Vivek-2108@terminal:~ $ cat contributions.sh")
+    window_title = xml_escape.escape(f"{GITHUB_USERNAME}@terminal:~ $ cat contributions.sh")
     svg_parts.append(f'<text class="title" x="68" y="22">{window_title}</text>')
 
-    # Stats Summary Cards (Top Section)
+    # Stats Summary Cards
     stats = [
         ("TOTAL CONTRIBUTIONS", f"{total_contribs} Year"),
         ("CURRENT STREAK", f"🔥 {current_streak} Days"),
@@ -162,60 +153,60 @@ def generate_heatmap_svg(data: dict, output_path: Path) -> None:
 
     card_width = 240
     card_height = 36
-    start_x = padding_x
-    card_y = header_bar_height + 12
+    start_x = PADDING_X
+    gap = 14
 
-    for idx, (label, val) in enumerate(stats):
-        cx = start_x + (idx * (card_width + 15))
-        svg_parts.append(f'<rect class="stat-box" x="{cx}" y="{card_y}" width="{card_width}" height="{card_height}" />')
-        svg_parts.append(f'<text class="stat-label" x="{cx + 12}" y="{card_y + 15}">{label}</text>')
-        svg_parts.append(f'<text class="stat-val" x="{cx + 12}" y="{card_y + 30}">{val}</text>')
+    for idx, (label, val_str) in enumerate(stats):
+        cx = start_x + idx * (card_width + gap)
+        cy = header_bar_height + PADDING_Y
+        svg_parts.append(f'<rect class="stat-card" x="{cx}" y="{cy}" width="{card_width}" height="{card_height}" />')
+        svg_parts.append(f'<text class="stat-label" x="{cx + 12}" y="{cy + 15}">{label}</text>')
+        svg_parts.append(f'<text class="stat-val" x="{cx + 12}" y="{cy + 30}">{val_str}</text>')
 
-    # Day of week labels on left (Mon, Wed, Fri)
-    day_labels = [(1, "Mon"), (3, "Wed"), (5, "Fri")]
-    for row_idx, label in day_labels:
-        ly = grid_start_y + (row_idx * step) + 9
-        svg_parts.append(f'<text class="lbl" x="{padding_x - 24}" y="{ly}">{label}</text>')
+    # Month Labels
+    label_y = calendar_y_start - 8
+    start_grid_x = PADDING_X + 28
 
-    # Month Labels (Top of grid)
-    month_y = grid_start_y - 10
-    for col_idx, m_name in month_labels:
-        mx = padding_x + (col_idx * step)
-        svg_parts.append(f'<text class="lbl" x="{mx}" y="{month_y}">{m_name}</text>')
+    for w_idx, m_str in month_labels:
+        mx = start_grid_x + (w_idx * (CELL_SIZE + CELL_GAP))
+        svg_parts.append(f'<text class="lbl" x="{mx}" y="{label_y}">{m_str}</text>')
 
-    # Grid Cells
-    for cell in grid_cells:
-        c = cell["col"]
-        r = cell["row"]
-        level = min(4, max(0, cell["level"]))
-        fill_color = COLOR_MAP.get(level, COLOR_MAP[0])
-        stroke_color = STROKE_MAP.get(level, STROKE_MAP[0])
+    # Day of week labels (Mon, Wed, Fri)
+    day_labels = [("Mon", 1), ("Wed", 3), ("Fri", 5)]
+    for d_name, d_idx in day_labels:
+        dy = calendar_y_start + (d_idx * (CELL_SIZE + CELL_GAP)) + 9
+        svg_parts.append(f'<text class="lbl" x="{PADDING_X}" y="{dy}">{d_name}</text>')
 
-        cx = padding_x + (c * step)
-        cy = grid_start_y + (r * step)
+    # Calendar Cells Grid
+    for w_idx, week in enumerate(weeks):
+        cx = start_grid_x + (w_idx * (CELL_SIZE + CELL_GAP))
+        for d_idx, day in enumerate(week):
+            cy = calendar_y_start + (d_idx * (CELL_SIZE + CELL_GAP))
+            lvl = day.get("level", 0)
+            fill_color = COLOR_MAP.get(lvl, COLOR_MAP[0])
+            count = day.get("count", 0)
+            date_str = day.get("date", "")
 
+            title_tip = f"{count} contributions on {date_str}"
+            svg_parts.append(
+                f'<rect class="day-cell c-{w_idx}-{d_idx}" x="{cx}" y="{cy}" width="{CELL_SIZE}" height="{CELL_SIZE}" fill="{fill_color}">'
+                f'<title>{title_tip}</title>'
+                f'</rect>'
+            )
+
+    # Heatmap Legend at bottom
+    legend_y = height - 12
+    legend_x_start = width - PADDING_X - 120
+    svg_parts.append(f'<text class="lbl" x="{legend_x_start - 30}" y="{legend_y + 9}">Less</text>')
+    for lvl in range(5):
+        lx = legend_x_start + (lvl * (CELL_SIZE + 2))
         svg_parts.append(
-            f'<rect class="cell d-{c}-{r}" x="{cx}" y="{cy}" width="{cell_size}" height="{cell_size}" rx="2" fill="{fill_color}" stroke="{stroke_color}" stroke-width="0.5" />'
+            f'<rect x="{lx}" y="{legend_y}" width="{CELL_SIZE}" height="{CELL_SIZE}" rx="2" fill="{COLOR_MAP[lvl]}" />'
         )
-
-    # Footer Legend (Less -> More)
-    footer_y = grid_start_y + grid_height + 22
-    legend_end_x = width - padding_x
-    legend_start_x = legend_end_x - 145
-
-    svg_parts.append(f'<text class="lbl" x="{legend_start_x - 30}" y="{footer_y + 9}">Less</text>')
-    for l_idx in range(5):
-        lx = legend_start_x + (l_idx * 15)
-        l_fill = COLOR_MAP[l_idx]
-        l_stroke = STROKE_MAP[l_idx]
-        svg_parts.append(
-            f'<rect x="{lx}" y="{footer_y}" width="11" height="11" rx="2" fill="{l_fill}" stroke="{l_stroke}" stroke-width="0.5" />'
-        )
-    svg_parts.append(f'<text class="lbl" x="{legend_start_x + 80}" y="{footer_y + 9}">More</text>')
+    svg_parts.append(f'<text class="lbl" x="{legend_x_start + (5 * (CELL_SIZE + 2)) + 6}" y="{legend_y + 9}">More</text>')
 
     svg_parts.append("</svg>")
 
-    # Write output SVG
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         f.write("\n".join(svg_parts))
@@ -224,9 +215,9 @@ def generate_heatmap_svg(data: dict, output_path: Path) -> None:
 
 
 def main() -> None:
-    """Main rendering entrypoint."""
-    data = load_contributions_data(INPUT_JSON)
-    generate_heatmap_svg(data, OUTPUT_SVG)
+    """Main function to render heatmap SVG."""
+    data = load_contributions(CONTRIBUTIONS_JSON)
+    generate_heatmap_svg(data, HEATMAP_SVG)
 
 
 if __name__ == "__main__":

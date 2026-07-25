@@ -3,63 +3,39 @@
 scripts/make_info_card.py
 
 Generates a Neofetch-style terminal info card as an SVG document (`info-card.svg`).
-Features line-by-line slide & fade animations, color badges, and customizable profile data dictionary.
+Features line-by-line slide & fade animations, color badges, and reads data from config.py.
 """
 
 import sys
 import xml.sax.saxutils as xml_escape
 from pathlib import Path
-
-# Paths
-ROOT_DIR = Path(__file__).resolve().parent.parent
-OUTPUT_SVG = ROOT_DIR / "info-card.svg"
-
-# Profile Data Dictionary - Modify fields here to customize your Neofetch Card!
-PROFILE_DATA = {
-    "whoami": "Vivek-2108",
-    "name": "Vivek Jadhav",
-    "role": "Full Stack & Android Developer",
-    "education": "Information Technology / CS",
-    "location": "India",
-    "stack": {
-        "Languages": "Java, Python, JavaScript, SQL",
-        "Backend": "Java, Node.js, Express, Firebase",
-        "Frontend": "Angular, React, HTML5, CSS3",
-        "DevOps": "Git, GitHub Actions, Vercel",
-        "Databases": "MySQL, MongoDB, Supabase",
-        "Tools": "Figma, Canva, Postman, VS Code",
-    },
-    "achievements": "Building scalable web apps & real-world projects",
-    "building": "Interactive web tools & DSA problem solving",
-}
+from config import GITHUB_USERNAME, INFO_CARD_SVG, PROFILE_DATA
 
 
-def generate_info_card_svg(data: dict, output_path: Path) -> None:
+def generate_info_card_svg(data: dict = PROFILE_DATA, output_path: Path = INFO_CARD_SVG) -> None:
     """Generate Neofetch terminal card SVG with CSS staggered fade-in animations."""
-    # Build list of lines to render
     lines = []
     
     # Header command
     lines.append(("cmd", "$ whoami"))
     lines.append(("separator", "----------------------------------------"))
     
-    # Core fields
+    # Core metadata fields (Requirement 8)
     lines.append(("key_val", ("Name", data.get("name", ""))))
     lines.append(("key_val", ("Role", data.get("role", ""))))
-    lines.append(("key_val", ("Education", data.get("education", ""))))
-    lines.append(("key_val", ("Location", data.get("location", ""))))
+    lines.append(("key_val", ("Building", data.get("current_project", ""))))
     lines.append(("separator", ""))
     
-    # Stack section
-    lines.append(("section", "STACK"))
-    stack = data.get("stack", {})
-    for category, skills in stack.items():
-        lines.append(("sub_key_val", (category, skills)))
-        
+    # Tech Stack Section
+    lines.append(("section", "TECH STACK"))
+    lines.append(("sub_key_val", ("Languages", data.get("languages", ""))))
+    lines.append(("sub_key_val", ("Backend", data.get("backend", ""))))
+    lines.append(("sub_key_val", ("Frontend", data.get("frontend", ""))))
+    lines.append(("sub_key_val", ("DevOps", data.get("devops", ""))))
+    lines.append(("sub_key_val", ("Database", data.get("database", ""))))
+    
     lines.append(("separator", ""))
-    # Additional metadata
-    lines.append(("key_val", ("Achievements", data.get("achievements", ""))))
-    lines.append(("key_val", ("Building", data.get("building", ""))))
+    lines.append(("key_val", ("Interests", data.get("interests", ""))))
     
     # Terminal color blocks row at bottom
     lines.append(("color_blocks", ""))
@@ -74,7 +50,6 @@ def generate_info_card_svg(data: dict, output_path: Path) -> None:
     calc_height = header_height + padding_y * 2 + (len(lines) * line_height) + 10
     height = int(calc_height)
 
-    # Delay per line for staggered animation
     delay_step = 0.05
 
     svg_parts = []
@@ -91,7 +66,6 @@ def generate_info_card_svg(data: dict, output_path: Path) -> None:
     svg_parts.append("    .dot-yellow { fill: #ffbd2e; }")
     svg_parts.append("    .dot-green { fill: #27c93f; }")
     
-    # Text styles
     svg_parts.append("    .txt { font-family: 'Fira Code', monospace; font-size: 12px; }")
     svg_parts.append("    .cmd { fill: #58a6ff; font-weight: 700; }")
     svg_parts.append("    .sep { fill: #30363d; }")
@@ -100,14 +74,12 @@ def generate_info_card_svg(data: dict, output_path: Path) -> None:
     svg_parts.append("    .val { fill: #c9d1d9; }")
     svg_parts.append("    .section-head { fill: #ffa657; font-weight: 700; letter-spacing: 1px; }")
     
-    # Animation keyframes: fade-in and slight slide up
     svg_parts.append("    .line-anim { opacity: 0; animation: slideFadeIn 0.35s ease-out forwards; }")
     svg_parts.append("    @keyframes slideFadeIn {")
     svg_parts.append("      0% { opacity: 0; transform: translateY(6px); }")
     svg_parts.append("      100% { opacity: 1; transform: translateY(0); }")
     svg_parts.append("    }")
     
-    # Delays
     for idx in range(len(lines)):
         delay = round(idx * delay_step, 3)
         svg_parts.append(f"    .l-{idx} {{ animation-delay: {delay}s; }}")
@@ -115,19 +87,15 @@ def generate_info_card_svg(data: dict, output_path: Path) -> None:
     svg_parts.append("  </style>")
     svg_parts.append("</defs>")
 
-    # Background frame
     svg_parts.append(f'<rect class="bg" width="{width}" height="{height}" />')
-    
-    # Header bar
     svg_parts.append(f'<rect class="header" width="{width}" height="{header_height}" />')
     svg_parts.append('<circle class="dot-red" cx="18" cy="18" r="5" />')
     svg_parts.append('<circle class="dot-yellow" cx="34" cy="18" r="5" />')
     svg_parts.append('<circle class="dot-green" cx="50" cy="18" r="5" />')
     
-    window_title = xml_escape.escape("Vivek-2108@terminal:~ $ neofetch")
+    window_title = xml_escape.escape(f"{GITHUB_USERNAME}@terminal:~ $ neofetch")
     svg_parts.append(f'<text class="title" x="68" y="22">{window_title}</text>')
 
-    # Content Rendering
     start_y = header_height + padding_y + 12
     for idx, (line_type, content) in enumerate(lines):
         y_pos = start_y + (idx * line_height)
@@ -163,7 +131,6 @@ def generate_info_card_svg(data: dict, output_path: Path) -> None:
                 f'</g>'
             )
         elif line_type == "color_blocks":
-            # Render terminal color palette bar
             colors = ["#ff5f56", "#ffbd2e", "#27c93f", "#58a6ff", "#bc8cff", "#39d353", "#f0883e"]
             block_group = [f'<g class="line-anim l-{idx}">']
             block_width = 24
@@ -178,7 +145,6 @@ def generate_info_card_svg(data: dict, output_path: Path) -> None:
 
     svg_parts.append("</svg>")
 
-    # Save SVG
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         f.write("\n".join(svg_parts))
@@ -188,7 +154,7 @@ def generate_info_card_svg(data: dict, output_path: Path) -> None:
 
 def main() -> None:
     """Main function to create Neofetch Info Card SVG."""
-    generate_info_card_svg(PROFILE_DATA, OUTPUT_SVG)
+    generate_info_card_svg(PROFILE_DATA, INFO_CARD_SVG)
 
 
 if __name__ == "__main__":

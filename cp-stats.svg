@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 270" width="100%" height="270">
+<defs>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;display=swap');
+    .card-bg { fill: #0d1117; rx: 10px; ry: 10px; stroke: #30363d; stroke-width: 1px; }
+    .header { fill: #161b22; rx: 10px; ry: 10px; }
+    .title { font-family: 'Fira Code', monospace; font-size: 12px; fill: #8b949e; font-weight: 600; }
+    .dot-red { fill: #ff5f56; }
+    .dot-yellow { fill: #ffbd2e; }
+    .dot-green { fill: #27c93f; }
+    .txt { font-family: 'Fira Code', monospace; font-size: 12px; }
+    .platform-title { font-size: 14px; font-weight: 700; }
+    .cf-title { fill: #f0883e; }
+    .lc-title { fill: #ffa657; }
+    .key { fill: #79c0ff; font-weight: 600; }
+    .val { fill: #c9d1d9; font-weight: 500; }
+    .val-highlight { fill: #58a6ff; font-weight: 700; }
+    .easy { fill: #39d353; font-weight: 600; }
+    .medium { fill: #ffbd2e; font-weight: 600; }
+    .hard { fill: #ff5f56; font-weight: 600; }
+    .bar-bg { fill: #21262d; rx: 4px; ry: 4px; }
+    .bar-easy { fill: #2ea043; rx: 4px; ry: 4px; }
+    .bar-medium { fill: #d29922; rx: 4px; ry: 4px; }
+    .bar-hard { fill: #f85149; rx: 4px; ry: 4px; }
+    .anim { opacity: 0; animation: fadeIn 0.4s ease-out forwards; }
+    @keyframes fadeIn { 0% { opacity: 0; transform: translateY(5px); } 100% { opacity: 1; transform: translateY(0); } }
+    .l-1 { animation-delay: 0.05s; }
+    .l-2 { animation-delay: 0.10s; }
+    .l-3 { animation-delay: 0.15s; }
+    .l-4 { animation-delay: 0.20s; }
+    .l-5 { animation-delay: 0.25s; }
+    .l-6 { animation-delay: 0.30s; }
+  </style>
+</defs>
+<g transform="translate(10, 0)">
+  <rect class="card-bg" width="425" height="270" />
+  <rect class="header" width="425" height="36" />
+  <circle class="dot-red" cx="18" cy="18" r="5" />
+  <circle class="dot-yellow" cx="34" cy="18" r="5" />
+  <circle class="dot-green" cx="50" cy="18" r="5" />
+  <text class="title" x="68" y="22">codeforces@terminal:~ $ cat Code_da_vinci.stats</text>
+  <text class="txt platform-title cf-title anim l-1" x="22" y="65">🏆 Codeforces Statistics</text>
+  <g class="anim l-2">
+    <text class="txt key" x="22" y="95">Current Rating:</text>
+    <text class="txt val-highlight" x="160" y="95">1140</text>
+    <text class="txt key" x="230" y="95">Max Rating:</text>
+    <text class="txt val" x="340" y="95">1140</text>
+  </g>
+  <g class="anim l-3">
+    <text class="txt key" x="22" y="121">Current Rank:</text>
+    <text class="txt val" x="160" y="121">Newbie</text>
+  </g>
+  <g class="anim l-4">
+    <text class="txt key" x="22" y="147">Problems Solved:</text>
+    <text class="txt val-highlight" x="160" y="147">200</text>
+  </g>
+  <g class="anim l-5">
+    <text class="txt key" x="22" y="173">Contests Attended:</text>
+    <text class="txt val" x="160" y="173">5</text>
+  </g>
+  <g class="anim l-6">
+    <rect class="bar-bg" x="22" y="197" width="380" height="22" rx="4" />
+    <text class="txt val" x="32" y="211">⚡ Competitive Rating Tier: Newbie</text>
+  </g>
+</g>
+<g transform="translate(445, 0)">
+  <rect class="card-bg" width="425" height="270" />
+  <rect class="header" width="425" height="36" />
+  <circle class="dot-red" cx="18" cy="18" r="5" />
+  <circle class="dot-yellow" cx="34" cy="18" r="5" />
+  <circle class="dot-green" cx="50" cy="18" r="5" />
+  <text class="title" x="68" y="22">leetcode@terminal:~ $ cat vivekjadhav07.stats</text>
+  <text class="txt platform-title lc-title anim l-1" x="22" y="65">💡 LeetCode Statistics</text>
+  <g class="anim l-2">
+    <text class="txt key" x="22" y="95">Total Solved:</text>
+    <text class="txt val-highlight" x="140" y="95">258</text>
+    <text class="txt key" x="220" y="95">Acceptance:</text>
+    <text class="txt val" x="330" y="95">71.1%</text>
+  </g>
+  <g class="anim l-3">
+    <text class="txt easy" x="22" y="123">Easy: 129</text>
+    <text class="txt medium" x="120" y="123">Med: 122</text>
+    <text class="txt hard" x="220" y="123">Hard: 7</text>
+  </g>
+  <g class="anim l-4">
+    <rect class="bar-bg" x="22" y="135" width="230" height="8" rx="4" />
+    <rect class="bar-easy" x="22" y="135" width="115" height="8" />
+    <rect class="bar-medium" x="137" y="135" width="108" height="8" />
+    <rect class="bar-hard" x="245" y="135" width="6" height="8" />
+  </g>
+  <g class="anim l-5">
+    <text class="txt key" x="22" y="167">Global Ranking:</text>
+    <text class="txt val" x="160" y="167">#594,337</text>
+  </g>
+  <g class="anim l-6">
+    <text class="txt key" x="22" y="193">Contest Rating:</text>
+    <text class="txt val-highlight" x="160" y="193">1528</text>
+  </g>
+</g>
+</svg>

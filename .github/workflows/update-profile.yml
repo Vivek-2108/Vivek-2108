@@ -1,8 +1,8 @@
-name: Update Profile Art & Heatmap
+name: Daily Profile Stats & Art Update
 
 on:
   schedule:
-    # Run daily at midnight UTC
+    # Run daily at 00:00 UTC
     - cron: '0 0 * * *'
   workflow_dispatch:
 
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  update-heatmap:
+  update-profile-stats:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,18 +30,28 @@ jobs:
           pip install -r scripts/requirements.txt
 
       - name: Fetch Live GitHub Contributions
-        run: |
-          python scripts/fetch_contributions.py
+        run: python scripts/fetch_github_contributions.py
+
+      - name: Fetch Live Codeforces Stats
+        run: python scripts/fetch_codeforces.py
+
+      - name: Fetch Live LeetCode Stats
+        run: python scripts/fetch_leetcode.py
 
       - name: Render Heatmap SVG
-        run: |
-          python scripts/render_heatmap_svg.py
+        run: python scripts/render_heatmap_svg.py
 
-      - name: Commit and Push Updated Heatmap [skip ci]
+      - name: Render Info Card SVG
+        run: python scripts/make_info_card.py
+
+      - name: Render CP Stats SVG
+        run: python scripts/render_cp_stats_svg.py
+
+      - name: Commit and Push Updated Profile Stats [skip ci]
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chroma(auto): update daily contribution heatmap stats [skip ci]"
-          file_pattern: 'contrib-heatmap.svg data/contributions.json'
+          commit_message: "chroma(auto): update daily profile & CP stats [skip ci]"
+          file_pattern: 'contrib-heatmap.svg info-card.svg cp-stats.svg ascii.svg data/*.json'
           commit_user_name: 'github-actions[bot]'
           commit_user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'

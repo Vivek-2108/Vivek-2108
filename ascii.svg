@@ -1,21 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 372" width="440" height="372">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 457 386" width="457" height="386">
 <defs>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&amp;display=swap');
     .bg { fill: #0d1117; rx: 10px; ry: 10px; stroke: #30363d; stroke-width: 1px; }
     .header { fill: #161b22; rx: 10px; ry: 10px; }
     .title { font-family: 'Fira Code', monospace; font-size: 11px; fill: #8b949e; font-weight: 600; }
     .dot-red { fill: #ff5f56; }
     .dot-yellow { fill: #ffbd2e; }
     .dot-green { fill: #27c93f; }
-    .ascii-text { font-family: 'Fira Code', 'Courier New', monospace; font-size: 11px; fill: #39d353; white-space: pre; }
-    .line { opacity: 0; animation: typeRow 0.1s ease-out forwards; }
+    .ascii-text { font-family: 'Fira Code', monospace; font-size: 10.5px; fill: #39d353; font-weight: 600; white-space: pre; }
+    .line { opacity: 0; animation: typeRow 0.15s ease-out forwards; }
     @keyframes typeRow {
-      0% { opacity: 0; clip-path: inset(0 100% 0 0); }
-      100% { opacity: 1; clip-path: inset(0 0 0 0); }
+      0% { opacity: 0; transform: translateX(-4px); }
+      100% { opacity: 1; transform: translateX(0); }
     }
-    .cursor { fill: #39d353; animation: blink 0.8s step-end infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
     .l-0 { animation-delay: 0.0s; }
     .l-1 { animation-delay: 0.05s; }
     .l-2 { animation-delay: 0.1s; }
@@ -40,37 +38,42 @@
     .l-21 { animation-delay: 1.05s; }
     .l-22 { animation-delay: 1.1s; }
     .l-23 { animation-delay: 1.15s; }
+    .l-24 { animation-delay: 1.2s; }
+    .cursor { fill: #39d353; opacity: 0; animation: blinkCursor 0.8s step-end infinite; }
+    .cursor-active { animation-delay: 1.4s; opacity: 1; }
+    @keyframes blinkCursor { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
   </style>
 </defs>
-<rect class="bg" width="440" height="372" />
-<rect class="header" width="440" height="36" />
+<rect class="bg" width="457" height="386" />
+<rect class="header" width="457" height="36" />
 <circle class="dot-red" cx="18" cy="18" r="5" />
 <circle class="dot-yellow" cx="34" cy="18" r="5" />
 <circle class="dot-green" cx="50" cy="18" r="5" />
 <text class="title" x="68" y="22">Vivek-2108@terminal:~ $ cat profile_portrait.txt</text>
-<text class="ascii-text line l-0" x="24" y="62.0">$$$$$$$$$$$$$$$$$$$$$@@$$$$$$$$$$$@@$$$$$$$$$$$$$$$$$$$$$$</text>
-<text class="ascii-text line l-1" x="24" y="74.5">$$$$$$$$$$$$$$$$$$$$@$$&amp;kOCUXzcCd&amp;$$@$$$$$$$$$$$$$$$$$$$$$</text>
-<text class="ascii-text line l-2" x="24" y="87.0">$$$$$$$$$$$$$$$$$$$@$hc)]+&lt;i!i&lt;_]|0%$$$$$$$$$$$$$$$$$$$$$$</text>
-<text class="ascii-text line l-3" x="24" y="99.5">$$$$$$$$$$$$$$$$$$@$L&lt;:^^"";ll&gt;++&lt;I~Q@@$$$$$$$$$$$$$$$$$$$</text>
-<text class="ascii-text line l-4" x="24" y="112.0">$$$$$$$$$$$$$$$$$@$&amp;-^?tnQQ0Zqdqm0[IZ@@$$$$$$$$$$$$$$$$$$$</text>
-<text class="ascii-text line l-5" x="24" y="124.5">$$$$$$$$$$$$$$$$$@$#I_J00JUCCzcYQdUt$$$$$$$$$$$$$$$$$$$$$$</text>
-<text class="ascii-text line l-6" x="24" y="137.0">$$$$$$$$$$$$$$$$$$@$Y|c)?~~/v_&lt;&lt;]xnX$@$$$$$$$$$$$$$$$$$$$$</text>
-<text class="ascii-text line l-7" x="24" y="149.5">$$$$$$$$$$$$$$$$$@@h0vCUnfvoBJrncZZJU$$$$$$$$$$$$$$$$$$$$$</text>
-<text class="ascii-text line l-8" x="24" y="162.0">$$$$$$$$$$$$$$$$$@$C[YCLccn((/uvLZmrx$@$$$$$$$$$$$$$$$$$$$</text>
-<text class="ascii-text line l-9" x="24" y="174.5">$$$$$$$$$$$$$$$$$@$Mcuft[1(}[]\-1nXUd$@$$$$$$$$$$$$$$$$$$$</text>
-<text class="ascii-text line l-10" x="24" y="187.0">$$$$$$$$$$$$$$$$$$$@8btvrxr\(\f|rrz%@$$$$$$$$$$$$$$$$$$$$$</text>
-<text class="ascii-text line l-11" x="24" y="199.5">$$$$$$$$$$$$$$$$$$$$$$Y[rZQr\cUv1[q$@$$$$$$$$$$$$$$$$$$$$$</text>
-<text class="ascii-text line l-12" x="24" y="212.0">$$$$$$$$$$$$$$$$$@@$@$k)_&lt;&gt;&gt;i&gt;&gt;&lt;]/k$@$@@$$$$$$$$$$$$$$$$$$</text>
-<text class="ascii-text line l-13" x="24" y="224.5">$$$$$$$$$$$$@@$$$$$$$BbXvt?!li]|tzb%$$$$$$$@$$$$$$$$$$$$$$</text>
-<text class="ascii-text line l-14" x="24" y="237.0">$$$$$$$$$@$$$$$@BWM&amp;MkhqJXx\}{\rcOkak88&amp;%@@$$$$@@$$$$$$$$$</text>
-<text class="ascii-text line l-15" x="24" y="249.5">$$$$$$$@$$@@B%&amp;WkabaUmZmbwz\)|vC0LOmXkdqda&amp;8%$@$$$$$$$$$$$</text>
-<text class="ascii-text line l-16" x="24" y="262.0">$$$$$$@$%WWbqwkm/w#mvC%bQ\&lt;&lt;&gt;i(XOk*vnXQbJmZpb0#MW$$$$$$$$$</text>
-<text class="ascii-text line l-17" x="24" y="274.5">$$$$$@$&amp;qZWbXCk(jadxcXwn1[&lt;I:l__|JQrrYbLjOdOUw&amp;QLk@$$$$$$$</text>
-<text class="ascii-text line l-18" x="24" y="287.0">$$$$@@%Zp0Y8b0c(mMfJm0vzJCv_:(nuYxcOLJawQrQhdBJXpQw@@$$$$$</text>
-<text class="ascii-text line l-19" x="24" y="299.5">$$$$@$qLZQczawxYWc|ZqOQwhC)!^&lt;fOpmwqqLqMptnm#CvCnYJd$@$$$$</text>
-<text class="ascii-text line l-20" x="24" y="312.0">$$$$$%CCUcnfz0woQ|LkdwZbbf_:`I[Chkkkbmw0vYmYzxr(nYCh&amp;$@$$$</text>
-<text class="ascii-text line l-21" x="24" y="324.5">$$$$$#wYCcr\1(dn]JbOOpbhC(!,":[C**apmCU(?0ht/|funXbph$@$$$</text>
-<text class="ascii-text line l-22" x="24" y="337.0">$$$@$abOXUXvf{)-uUUXQQO0X),,,,[XpZZ0Yvrtr0\)fvXcQOYvw$@$$$</text>
-<text class="ascii-text line l-23" x="24" y="349.5">$$$@$wzqwCXvu|]tn)tXYXcuY}`""`[vY0LYzcnrXc+(rxXwCxJZQB$$$$</text>
-<rect class="cursor line l-23" x="410.8" y="340.5" width="7" height="11" />
+<text class="ascii-text line l-0" x="18" y="60.0">@@@@@@@@@@@@@@@@@@@@@%%@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii-text line l-1" x="18" y="72.5">@@@@@@@@@@@@@@@@@@@@%@@%#**++++*#%@@%@@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii-text line l-2" x="18" y="85.0">@@@@@@@@@@@@@@@@@@@%@%+-:::...:::=*@@@@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii-text line l-3" x="18" y="97.5">@@@@@@@@@@@@@@@@@@%@*:.       .....-*%%@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii-text line l-4" x="18" y="110.0">@@@@@@@@@@@@@@@@@%@%: .:-==++***++: +%%@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii-text line l-5" x="18" y="122.5">@@@@@@@@@@@@@@@@@%@#..+**********#+-@@@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii-text line l-6" x="18" y="135.0">@@@@@@@@@@@@@@@@@@%%--+--::--:.:-===@%@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii-text line l-7" x="18" y="147.5">@@@@@@@@@@@@@@@@@@%%#=+=--=#%=---+++#%@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii-text line l-8" x="18" y="160.0">@@@@@@@@@@@@@@@@@%@+-+**+=++++=+*##=-@@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii-text line l-9" x="18" y="172.5">@@@@@@@@@@@@@@@@@%@#-===-=-:::=--=+=*@%@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii-text line l-10" x="18" y="185.0">@@@@@@@@@@@@@@@@@@@%#+-=-:-----:-==#%@@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii-text line l-11" x="18" y="197.5">@@@@@@@@@@@@@@@@@@@@@%=-+*+--=++=-+@@@@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii-text line l-12" x="18" y="210.0">@@@@@@@@@@@@@@@@@@@@%@*::-=-----:-#%%@@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii-text line l-13" x="18" y="222.5">@@@@@@@@@@@@@@@@%%@@@@#=-:.   .:-=#@@@@%%%@@@@@@@@@@@@@@@@</text>
+<text class="ascii-text line l-14" x="18" y="235.0">@@@@@@@@@@@%%@@@@@@%%%#+++-:::-==+#%%%@@@@@@@%%@@@@@@@@@@@</text>
+<text class="ascii-text line l-15" x="18" y="247.5">@@@@@@@@%@@@@@%%%##%#*##*+=----=+**#*%%##%%%@@@@%@@@@@@@@@</text>
+<text class="ascii-text line l-16" x="18" y="260.0">@@@@@@@%@@%%%%##*###=***#*=---+**+**=**###%%%%%%@@%@@@@@@@</text>
+<text class="ascii-text line l-17" x="18" y="272.5">@@@@@@%@%#%***#+-*%*=+@*=: .. :=+##==+**=****+%##%@%@@@@@@</text>
+<text class="ascii-text line l-18" x="18" y="285.0">@@@@@%@#**##++*-=%*=+++----..:-:-=+==+#*=*#*+#%+**%@%@@@@@</text>
+<text class="ascii-text line l-19" x="18" y="297.5">@@@@%@%***=%#*=-##-***++*+=: -=+*++**+##*-+##%=+*+*%@%@@@@</text>
+<text class="ascii-text line l-20" x="18" y="310.0">@@@@%@*+*++=#*=+%=-*****#+-. .-*#******%*==*#+++=++*%%@@@@</text>
+<text class="ascii-text line l-21" x="18" y="322.5">@@@%@%++++===+##+-*##**#*=:  .:+#####**+=+*+===-=++#%@%@@@</text>
+<text class="ascii-text line l-22" x="18" y="335.0">@@@@@#*+++=---*=:+#***##+-.   :+###**++-:*#---===+#*#@%@@@</text>
+<text class="ascii-text line l-23" x="18" y="347.5">@@@%@##*++++=--:=+++*+**+-    :+****+==-=*--==++**+=*@%@@@</text>
+<text class="ascii-text line l-24" x="18" y="360.0">@@@%@*+**++==-:==--++++=+:    :=+*++++==+=:-==+*+=+**%@@@@</text>
+<rect class="cursor cursor-active" x="18" y="351.0" width="7" height="11" />
 </svg>

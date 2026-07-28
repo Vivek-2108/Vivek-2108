@@ -26,7 +26,7 @@ HEATMAP_SVG = ROOT_DIR / "contrib-heatmap.svg"
 CP_STATS_SVG = ROOT_DIR / "cp-stats.svg"
 
 # User Profiles & Handles
-GITHUB_USERNAME = "Vivek-2108"
+GITHUB_USERNAME = "vivek-2108"
 CODEFORCES_USERNAME = "Code_da_vinci"
 CODEFORCES_URL = f"https://codeforces.com/profile/{CODEFORCES_USERNAME}"
 
@@ -34,6 +34,7 @@ LEETCODE_USERNAME = "vivekjadhav07"
 LEETCODE_URL = f"https://leetcode.com/u/{LEETCODE_USERNAME}/"
 
 LINKEDIN_URL = "https://www.linkedin.com/in/vivek-jadhav-290a39301/"
+EMAIL = "officialvivek5576@gmail.com"
 
 # Information Card Data (Neofetch Terminal Card)
 PROFILE_DATA = {

@@ -4,8 +4,8 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&custom_color_list=0d1117,3b0764,6b21a8,7c3aed,8b5cf6&height=220&section=header&text=Vivek%20Pandurang%20Jadhav&fontSize=42&fontColor=ffffff&fontAlignY=36&animation=twinkling" width="100%" alt="Header Banner" />
 
   <!-- 1b. Typing SVG Animation -->
-  <a href="https://github.com/Vivek-2108">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=8B5CF6&center=true&vCenter=true&width=750&lines=Software+Engineer+%7C+AI+%26+Distributed+Systems;Full+Stack+%26+API+Security+Architect;Open+Source+Contributor+%26+Engineering+Lead" alt="Typing SVG" />
+  <a href="https://github.com/vivek-2108">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=8B5CF6&center=true&vCenter=true&width=750&lines=Software+Engineer+%7C+Full+Stack+%26+Distributed+Systems;API+Security+Architect+%26+Competitive+Programmer" alt="Typing SVG" />
   </a>
 
   <br/><br/>
@@ -18,26 +18,29 @@
 
   <br/><br/>
 
-  <!-- 1e. Portfolio, 1f. LinkedIn, 1g. Email, 1h. GitHub Buttons -->
-  <a href="https://github.com/Vivek-2108">
-    <img src="https://img.shields.io/badge/Portfolio-Live_Site-7c3aed?style=for-the-badge&logo=react&logoColor=white" alt="Portfolio" />
-  </a>
-  <a href="https://linkedin.com/in/vivek-jadhav-">
+  <!-- 1e-1h. Social Action Buttons (Only exact requested links) -->
+  <a href="https://www.linkedin.com/in/vivek-jadhav-290a39301/">
     <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="mailto:officialvivek5575@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  <a href="https://codeforces.com/profile/Code_da_vinci">
+    <img src="https://img.shields.io/badge/Codeforces-Code__da__vinci-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces" />
   </a>
-  <a href="https://github.com/Vivek-2108">
+  <a href="https://leetcode.com/u/vivekjadhav07/">
+    <img src="https://img.shields.io/badge/LeetCode-vivekjadhav07-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode" />
+  </a>
+  <a href="https://github.com/vivek-2108">
     <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+  <a href="mailto:officialvivek5576@gmail.com">
+    <img src="https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
 
   <br/><br/>
 
   <!-- 1i. Profile Views, 1j. Followers, 1k. Stars Badges -->
-  <img src="https://komarev.com/ghpvc/?username=Vivek-2108&label=PROFILE%20VIEWS&color=7c3aed&style=flat-square" alt="Profile Views" />
-  <img src="https://img.shields.io/github/followers/Vivek-2108?label=FOLLOWERS&color=8b5cf6&style=flat-square" alt="Followers" />
-  <img src="https://img.shields.io/github/stars/Vivek-2108?label=TOTAL%20STARS&color=6366f1&style=flat-square" alt="Total Stars" />
+  <img src="https://komarev.com/ghpvc/?username=vivek-2108&label=PROFILE%20VIEWS&color=7c3aed&style=flat-square" alt="Profile Views" />
+  <img src="https://img.shields.io/github/followers/vivek-2108?label=FOLLOWERS&color=8b5cf6&style=flat-square" alt="Followers" />
+  <img src="https://img.shields.io/github/stars/vivek-2108?label=TOTAL%20STARS&color=6366f1&style=flat-square" alt="Total Stars" />
 
 </div>
 
@@ -47,21 +50,21 @@
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│  SOFTWARE ENGINEER | DISTRIBUTED SYSTEMS ARCHITECT | AI/ML INFRASTRUCTURE SPECIALIST   │
+│                                   SOFTWARE ENGINEER                                    │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-I am a **Software Engineer** pursuing a B.Tech in Information Technology at Walchand College of Engineering, Sangli. Driven by a product engineering mindset and low-level computational efficiency, I specialize in engineering production-grade distributed microservices, zero-trust backend security architectures, and scalable AI/ML systems.
+I am a **Software Engineer** pursuing a B.Tech in Information Technology at Walchand College of Engineering, Sangli. Driven by low-level computational efficiency and a strong engineering mindset, I specialize in building robust full-stack web applications (MERN), distributed microservices, and scalable AI/ML systems.
 
-- 🔬 **Software Engineering Rigor**: Experienced in architecting fault-tolerant microservices, store-and-forward gossip protocols, high-performance API gateways, and ACID-compliant distributed transaction networks.
-- 🧠 **AI/ML & Vector Systems**: Expert in designing local-first RAG architectures, multi-stage hybrid retrieval pipelines (vector embedding + cross-encoder re-ranking), and LLM-assisted threat detection engines.
-- 🛠️ **Full-Stack Mastery**: Adept at pairing high-throughput Node.js/Express and Python backend pipelines with responsive React.js and Vite frontends backed by Redis caching and MongoDB persistence.
-- 🎯 **Product Engineering Mindset**: Focused on delivering high-impact, mission-critical systems with strict SLAs, resilient zero-trust security postures, and end-to-end observability.
+- 🔬 **Engineering Rigor**: Experienced in architecting fault-tolerant microservices, store-and-forward gossip protocols, high-performance API gateways, and ACID-compliant distributed transaction networks.
+- 💻 **MERN & Full-Stack Development**: Skilled in pairing Node.js/Express and Python backend pipelines with dynamic React.js and Vite frontends backed by Redis caching and MongoDB persistence.
+- 🧠 **AI/ML & RAG Systems**: Experienced in designing local-first RAG architectures, multi-stage hybrid retrieval pipelines (vector embedding + cross-encoder re-ranking), and LLM-assisted threat detection engines.
+- 🎯 **Product & Security Mindset**: Focused on delivering high-impact, mission-critical software systems with strict SLAs, resilient zero-trust security postures, and end-to-end observability.
 
 ### 🌐 Open To
-- **Full-Time Software Engineering & AI/ML Roles**
+- **Full-Time Software Engineering Roles**
 - **High-Impact Open Source Collaborations**
-- **Technical Leadership & Systems Architecture Consultation**
+- **Distributed Systems & Backend Engineering Challenges**
 
 ---
 
@@ -87,16 +90,16 @@ I am a **Software Engineer** pursuing a B.Tech in Information Technology at Walc
 
 ---
 
-## 🧠 AI / ML Expertise
+## 💡 Engineering Expertise
 
 <div align="center">
 
-| Domain | Proficiency | Details |
-| :--- | :---: | :--- |
-| **Vector Retrieval & RAG** | `Expert` | BGE-M3 embeddings, Chroma vector store, HyDE query expansion, BAAI/bge-reranker-large cross-encoders |
-| **LLM Orchestration** | `Advanced` | LangChain integration, Ollama local inference, OpenAI API routing, structured citation parsing |
-| **AI Threat Analytics** | `Advanced` | Real-time payload vector analysis, dynamic risk scoring, SQLi/XSS/Command Injection detection models |
-| **Async AI Pipelines** | `Expert` | Redis worker queue decoupling, async job scheduling, multi-stage context retrieval benchmarking |
+| Expertise Domain | Stack & Technologies | Focus & Application Details |
+| :--- | :--- | :--- |
+| **MERN Stack** | `React.js` `Node.js` `Express.js` `MongoDB` | Full-stack web architectures, RESTful APIs, responsive Vite UI, and dynamic backend microservices |
+| **Distributed Systems** | `Gossip Protocol` `Redis Idempotency` `Socket.IO` `ACID` | Store-and-forward mesh networks, atomic transaction rollbacks, and scalable rate-limiting API gateways |
+| **AI / ML Infrastructure** | `LangChain` `Chroma Vector DB` `BGE-M3` `BAAI Reranker` | Local-first RAG retrieval pipelines, citation grounding, query expansion, and LLM security engines |
+| **DevOps & Security** | `Docker` `Prometheus` `Grafana` `JWT` `Git` | Containerized backend services, zero-trust authorization, metric endpoints, and CI/CD pipelines |
 
 </div>
 
@@ -118,7 +121,7 @@ I am a **Software Engineer** pursuing a B.Tech in Information Technology at Walc
 | **Performance** | Sub-millisecond Redis-backed sliding-window rate limiting & async token bucket processing |
 | **Security** | Zero-Trust JWT/API key authentication, RBAC, rule-based risk scoring & LLM threat inspection |
 | **Impact** | Mitigates SQLi, XSS, Command Injection, brute-force attacks, and bot traffic in real time |
-| **Repository** | [`Sentinel-Gateway`](https://github.com/Vivek-2108) |
+| **Repository** | [`Sentinel-Gateway`](https://github.com/vivek-2108) |
 
 #### Professional Overview
 - **Architected Dynamic Reverse Proxying**: Built a high-performance routing layer supporting dynamic upstream service discovery, automated health checks, and configurable load-balancing algorithms.
@@ -141,7 +144,7 @@ I am a **Software Engineer** pursuing a B.Tech in Information Technology at Walc
 | **Performance** | Epidemic store-and-forward gossip protocol enabling zero-internet transaction delivery |
 | **Security** | RSA-2048 OAEP key exchange, AES-256-GCM authenticated encryption (12-byte IVs, 16-byte MACs) |
 | **Impact** | Guarantees atomic transaction settlement and replay resistance in offline/disconnected environments |
-| **Repository** | [`MeshPay`](https://github.com/Vivek-2108) |
+| **Repository** | [`MeshPay`](https://github.com/vivek-2108) |
 
 #### Professional Overview
 - **Designed Epidemic Gossip Routing**: Constructed a store-and-forward peer propagation protocol utilizing TTL queues to guarantee optimal packet delivery across disconnected mesh nodes.
@@ -164,7 +167,7 @@ I am a **Software Engineer** pursuing a B.Tech in Information Technology at Walc
 | **Performance** | Decoupled async Python RAG processing pipeline backed by a Redis message queue |
 | **Security** | 100% local execution ensuring complete data privacy and zero cloud data leaks |
 | **Impact** | Live demoed to industry judges with 100% citation precision and section-grounded outputs |
-| **Repository** | [`TextbookRAG`](https://github.com/Vivek-2108) |
+| **Repository** | [`TextbookRAG`](https://github.com/vivek-2108) |
 
 #### Professional Overview
 - **Engineered Multi-Stage Retrieval Pipeline**: Combined dense BGE-M3 embeddings in Chroma vector store with HyDE query expansion and a two-pass `BAAI/bge-reranker-large` cross-encoder scoring stage.
@@ -203,6 +206,7 @@ I am a **Software Engineer** pursuing a B.Tech in Information Technology at Walc
 
 ---
 
+<!--
 ## 📜 Certifications
 
 <div align="center">
@@ -217,25 +221,17 @@ I am a **Software Engineer** pursuing a B.Tech in Information Technology at Walc
 </div>
 
 ---
+-->
 
 ## 💻 Coding Profiles
 
 <div align="center">
 
-<a href="https://leetcode.com/vivekjadhav07">
+<a href="https://leetcode.com/u/vivekjadhav07/">
   <img src="https://img.shields.io/badge/LeetCode-vivekjadhav07-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode" />
 </a>
-<a href="https://codeforces.com/profile/Code_da_Vinci">
-  <img src="https://img.shields.io/badge/Codeforces-Code__da__Vinci-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces" />
-</a>
-<a href="https://www.codechef.com/users/underest1mated">
-  <img src="https://img.shields.io/badge/CodeChef-underest1mated-5B4638?style=for-the-badge&logo=codechef&logoColor=white" alt="CodeChef" />
-</a>
-<a href="https://www.geeksforgeeks.org/user/officialvivek5575/">
-  <img src="https://img.shields.io/badge/GeeksforGeeks-Vivek_Jadhav-298D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks" />
-</a>
-<a href="https://www.hackerrank.com/officialvivek5575">
-  <img src="https://img.shields.io/badge/HackerRank-Vivek_Jadhav-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white" alt="HackerRank" />
+<a href="https://codeforces.com/profile/Code_da_vinci">
+  <img src="https://img.shields.io/badge/Codeforces-Code__da__vinci-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces" />
 </a>
 
 </div>
@@ -246,17 +242,17 @@ I am a **Software Engineer** pursuing a B.Tech in Information Technology at Walc
 
 <div align="center">
 
-  <a href="https://github.com/Vivek-2108">
-    <img src="https://github-readme-stats.vercel.app/api?username=Vivek-2108&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=8b5cf6&icon_color=7c3aed&text_color=c9d1d9" width="48%" alt="GitHub Stats" />
+  <a href="https://github.com/vivek-2108">
+    <img src="https://github-readme-stats.vercel.app/api?username=vivek-2108&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=8b5cf6&icon_color=7c3aed&text_color=c9d1d9" width="48%" alt="GitHub Stats" />
   </a>
-  <a href="https://github.com/Vivek-2108">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vivek-2108&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=8b5cf6&text_color=c9d1d9" width="48%" alt="Top Languages" />
+  <a href="https://github.com/vivek-2108">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vivek-2108&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=8b5cf6&text_color=c9d1d9" width="48%" alt="Top Languages" />
   </a>
 
   <br/><br/>
 
-  <a href="https://github.com/Vivek-2108">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Vivek-2108&theme=tokyonight&hide_border=true&background=0D1117&ring=8B5CF6&fire=7C3AED&currStreakLabel=8B5CF6" width="97%" alt="GitHub Streak" />
+  <a href="https://github.com/vivek-2108">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=vivek-2108&theme=tokyonight&hide_border=true&background=0D1117&ring=8B5CF6&fire=7C3AED&currStreakLabel=8B5CF6" width="97%" alt="GitHub Streak" />
   </a>
 
 </div>
@@ -267,21 +263,19 @@ I am a **Software Engineer** pursuing a B.Tech in Information Technology at Walc
 
 <div align="center">
 
-  <a href="https://github.com/Vivek-2108">
-    <img src="https://github-profile-trophy.vercel.app/?username=Vivek-2108&theme=tokyonight&column=7&margin-w=15&margin-h=15&no-bg=true" width="100%" alt="GitHub Trophies" />
+  <a href="https://github.com/vivek-2108">
+    <img src="https://github-profile-trophy.vercel.app/?username=vivek-2108&theme=tokyonight&column=7&margin-w=15&margin-h=15&no-bg=true" width="100%" alt="GitHub Trophies" />
   </a>
 
 </div>
 
 ---
 
-## 📈 Contribution Activity
+## 🧩 Competitive Programming Profile
 
 <div align="center">
 
-  <a href="https://github.com/Vivek-2108">
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=Vivek-2108&theme=react-dark&bg_color=0d1117&color=8b5cf6&line=7c3aed&point=ffffff&area=true&hide_border=true" width="100%" alt="Contribution Activity Graph" />
-  </a>
+  <img src="https://raw.githubusercontent.com/vivek-2108/vivek-2108/main/cp-stats.svg" width="100%" alt="Competitive Programming Stats" />
 
 </div>
 
@@ -292,9 +286,9 @@ I am a **Software Engineer** pursuing a B.Tech in Information Technology at Walc
 <div align="center">
 
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vivek-2108/Vivek-2108/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Vivek-2108/Vivek-2108/output/github-contribution-grid-snake.svg">
-    <img alt="GitHub Snake Contribution Grid" src="https://raw.githubusercontent.com/Vivek-2108/Vivek-2108/output/github-contribution-grid-snake-dark.svg" width="100%" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/vivek-2108/vivek-2108/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/vivek-2108/vivek-2108/output/github-contribution-grid-snake.svg">
+    <img alt="GitHub Snake Contribution Grid" src="https://raw.githubusercontent.com/vivek-2108/vivek-2108/output/github-contribution-grid-snake-dark.svg" width="100%" />
   </picture>
 
 </div>
@@ -316,7 +310,7 @@ Current_Focus:
     - Zero-Knowledge Cryptographic Proofs (ZK-SNARKs)
     - Multi-Agent Orchestration Frameworks
   Open_To:
-    - Senior Software Engineer & AI Architect Opportunities
+    - Senior Software Engineer & Backend Roles
     - Open-Source Infrastructure Collaborations
 ```
 
@@ -326,17 +320,20 @@ Current_Focus:
 
 <div align="center">
 
-  <a href="mailto:officialvivek5575@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-officialvivek5575%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
+  <a href="mailto:officialvivek5576@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-officialvivek5576%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
   </a>
-  <a href="https://linkedin.com/in/vivek-jadhav-">
+  <a href="https://www.linkedin.com/in/vivek-jadhav-290a39301/">
     <img src="https://img.shields.io/badge/LinkedIn-Vivek_Jadhav-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="https://github.com/Vivek-2108">
-    <img src="https://img.shields.io/badge/GitHub-Vivek--2108-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  <a href="https://github.com/vivek-2108">
+    <img src="https://img.shields.io/badge/GitHub-vivek--2108-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
-  <a href="https://github.com/Vivek-2108">
-    <img src="https://img.shields.io/badge/Portfolio-vivekjadhav.dev-7c3aed?style=for-the-badge&logo=react&logoColor=white" alt="Portfolio" />
+  <a href="https://codeforces.com/profile/Code_da_vinci">
+    <img src="https://img.shields.io/badge/Codeforces-Code__da__vinci-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces" />
+  </a>
+  <a href="https://leetcode.com/u/vivekjadhav07/">
+    <img src="https://img.shields.io/badge/LeetCode-vivekjadhav07-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode" />
   </a>
 
 </div>

@@ -99,7 +99,6 @@ I am a **Software Engineer** pursuing a B.Tech in Information Technology at Walc
 | **MERN Stack** | `React.js` `Node.js` `Express.js` `MongoDB` | Full-stack web architectures, RESTful APIs, responsive Vite UI, and dynamic backend microservices |
 | **Distributed Systems** | `Gossip Protocol` `Redis Idempotency` `Socket.IO` `ACID` | Store-and-forward mesh networks, atomic transaction rollbacks, and scalable rate-limiting API gateways |
 | **AI / ML Infrastructure** | `LangChain` `Chroma Vector DB` `BGE-M3` `BAAI Reranker` | Local-first RAG retrieval pipelines, citation grounding, query expansion, and LLM security engines |
-| **DevOps & Security** | `Docker` `Prometheus` `Grafana` `JWT` `Git` | Containerized backend services, zero-trust authorization, metric endpoints, and CI/CD pipelines |
 
 </div>
 
@@ -259,37 +258,11 @@ I am a **Software Engineer** pursuing a B.Tech in Information Technology at Walc
 
 ---
 
-## 🏆 GitHub Trophies
-
-<div align="center">
-
-  <a href="https://github.com/vivek-2108">
-    <img src="https://github-profile-trophy.vercel.app/?username=vivek-2108&theme=tokyonight&column=7&margin-w=15&margin-h=15&no-bg=true" width="100%" alt="GitHub Trophies" />
-  </a>
-
-</div>
-
----
-
 ## 🧩 Competitive Programming Profile
 
 <div align="center">
 
   <img src="https://raw.githubusercontent.com/vivek-2108/vivek-2108/main/cp-stats.svg" width="100%" alt="Competitive Programming Stats" />
-
-</div>
-
----
-
-## 🐍 Contribution Snake Animation
-
-<div align="center">
-
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/vivek-2108/vivek-2108/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/vivek-2108/vivek-2108/output/github-contribution-grid-snake.svg">
-    <img alt="GitHub Snake Contribution Grid" src="https://raw.githubusercontent.com/vivek-2108/vivek-2108/output/github-contribution-grid-snake-dark.svg" width="100%" />
-  </picture>
 
 </div>
 
@@ -306,12 +279,6 @@ Current_Focus:
   Building:
     - Sentinel Gateway AI Threat Inspection Engine
     - Offline Mesh Network Routing Protocols
-  Exploring:
-    - Zero-Knowledge Cryptographic Proofs (ZK-SNARKs)
-    - Multi-Agent Orchestration Frameworks
-  Open_To:
-    - Senior Software Engineer & Backend Roles
-    - Open-Source Infrastructure Collaborations
 ```
 
 ---

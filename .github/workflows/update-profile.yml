@@ -29,20 +29,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
-      - name: Fetch Live GitHub Contributions
-        run: python scripts/fetch_github_contributions.py
-
       - name: Fetch Live Codeforces Stats
         run: python scripts/fetch_codeforces.py
 
       - name: Fetch Live LeetCode Stats
         run: python scripts/fetch_leetcode.py
-
-      - name: Render Heatmap SVG
-        run: python scripts/render_heatmap_svg.py
-
-      - name: Render Info Card SVG
-        run: python scripts/make_info_card.py
 
       - name: Render CP Stats SVG
         run: python scripts/render_cp_stats_svg.py
@@ -51,7 +42,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chroma(auto): update daily profile & CP stats [skip ci]"
-          file_pattern: 'contrib-heatmap.svg info-card.svg cp-stats.svg ascii.svg data/*.json'
+          file_pattern: 'cp-stats.svg data/*.json'
           commit_user_name: 'github-actions[bot]'
           commit_user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'

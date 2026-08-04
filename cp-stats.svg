@@ -73,24 +73,24 @@
   <text class="txt platform-title lc-title anim l-1" x="22" y="65">💡 LeetCode Statistics</text>
   <g class="anim l-2">
     <text class="txt key" x="22" y="95">Total Solved:</text>
-    <text class="txt val-highlight" x="140" y="95">275</text>
+    <text class="txt val-highlight" x="140" y="95">278</text>
     <text class="txt key" x="220" y="95">Acceptance:</text>
-    <text class="txt val" x="330" y="95">71.1%</text>
+    <text class="txt val" x="330" y="95">70.7%</text>
   </g>
   <g class="anim l-3">
-    <text class="txt easy" x="22" y="123">Easy: 140</text>
-    <text class="txt medium" x="120" y="123">Med: 128</text>
-    <text class="txt hard" x="220" y="123">Hard: 7</text>
+    <text class="txt easy" x="22" y="123">Easy: 141</text>
+    <text class="txt medium" x="120" y="123">Med: 129</text>
+    <text class="txt hard" x="220" y="123">Hard: 8</text>
   </g>
   <g class="anim l-4">
     <rect class="bar-bg" x="22" y="135" width="230" height="8" rx="4" />
-    <rect class="bar-easy" x="22" y="135" width="117" height="8" />
-    <rect class="bar-medium" x="139" y="135" width="107" height="8" />
-    <rect class="bar-hard" x="246" y="135" width="5" height="8" />
+    <rect class="bar-easy" x="22" y="135" width="116" height="8" />
+    <rect class="bar-medium" x="138" y="135" width="106" height="8" />
+    <rect class="bar-hard" x="244" y="135" width="6" height="8" />
   </g>
   <g class="anim l-5">
     <text class="txt key" x="22" y="167">Global Ranking:</text>
-    <text class="txt val" x="160" y="167">#551,900</text>
+    <text class="txt val" x="160" y="167">#544,136</text>
   </g>
   <g class="anim l-6">
     <text class="txt key" x="22" y="193">Contest Rating:</text>

@@ -42,25 +42,25 @@
   <text class="txt platform-title cf-title anim l-1" x="22" y="65">🏆 Codeforces Statistics</text>
   <g class="anim l-2">
     <text class="txt key" x="22" y="95">Current Rating:</text>
-    <text class="txt val-highlight" x="160" y="95">1140</text>
+    <text class="txt val-highlight" x="160" y="95">0</text>
     <text class="txt key" x="230" y="95">Max Rating:</text>
-    <text class="txt val" x="340" y="95">1140</text>
+    <text class="txt val" x="340" y="95">0</text>
   </g>
   <g class="anim l-3">
     <text class="txt key" x="22" y="121">Current Rank:</text>
-    <text class="txt val" x="160" y="121">Newbie</text>
+    <text class="txt val" x="160" y="121">Unranked</text>
   </g>
   <g class="anim l-4">
     <text class="txt key" x="22" y="147">Problems Solved:</text>
-    <text class="txt val-highlight" x="160" y="147">200</text>
+    <text class="txt val-highlight" x="160" y="147">0</text>
   </g>
   <g class="anim l-5">
     <text class="txt key" x="22" y="173">Contests Attended:</text>
-    <text class="txt val" x="160" y="173">5</text>
+    <text class="txt val" x="160" y="173">0</text>
   </g>
   <g class="anim l-6">
     <rect class="bar-bg" x="22" y="197" width="380" height="22" rx="4" />
-    <text class="txt val" x="32" y="211">⚡ Competitive Rating Tier: Newbie</text>
+    <text class="txt val" x="32" y="211">⚡ Competitive Rating Tier: Unranked</text>
   </g>
 </g>
 <g transform="translate(445, 0)">
@@ -73,13 +73,13 @@
   <text class="txt platform-title lc-title anim l-1" x="22" y="65">💡 LeetCode Statistics</text>
   <g class="anim l-2">
     <text class="txt key" x="22" y="95">Total Solved:</text>
-    <text class="txt val-highlight" x="140" y="95">282</text>
+    <text class="txt val-highlight" x="140" y="95">283</text>
     <text class="txt key" x="220" y="95">Acceptance:</text>
-    <text class="txt val" x="330" y="95">70.9%</text>
+    <text class="txt val" x="330" y="95">71.0%</text>
   </g>
   <g class="anim l-3">
     <text class="txt easy" x="22" y="123">Easy: 144</text>
-    <text class="txt medium" x="120" y="123">Med: 130</text>
+    <text class="txt medium" x="120" y="123">Med: 131</text>
     <text class="txt hard" x="220" y="123">Hard: 8</text>
   </g>
   <g class="anim l-4">
@@ -90,7 +90,7 @@
   </g>
   <g class="anim l-5">
     <text class="txt key" x="22" y="167">Global Ranking:</text>
-    <text class="txt val" x="160" y="167">#533,002</text>
+    <text class="txt val" x="160" y="167">#533,391</text>
   </g>
   <g class="anim l-6">
     <text class="txt key" x="22" y="193">Contest Rating:</text>

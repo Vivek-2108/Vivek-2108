@@ -1,11 +1,11 @@
 {
   "handle": "Code_da_vinci",
-  "rating": 0,
-  "max_rating": 0,
-  "rank": "Unranked",
-  "max_rank": "Unranked",
-  "contests": 0,
-  "problems_solved": 0,
-  "updated_at": "2026-08-09T02:00:03.424941+00:00",
+  "rating": 1140,
+  "max_rating": 1140,
+  "rank": "Newbie",
+  "max_rank": "Newbie",
+  "contests": 5,
+  "problems_solved": 200,
+  "updated_at": "2026-08-10T02:04:29.381836+00:00",
   "status": "OK"
 }

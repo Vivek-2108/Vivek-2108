@@ -75,7 +75,7 @@
     <text class="txt key" x="22" y="95">Total Solved:</text>
     <text class="txt val-highlight" x="140" y="95">283</text>
     <text class="txt key" x="220" y="95">Acceptance:</text>
-    <text class="txt val" x="330" y="95">71.0%</text>
+    <text class="txt val" x="330" y="95">71.1%</text>
   </g>
   <g class="anim l-3">
     <text class="txt easy" x="22" y="123">Easy: 144</text>
@@ -90,7 +90,7 @@
   </g>
   <g class="anim l-5">
     <text class="txt key" x="22" y="167">Global Ranking:</text>
-    <text class="txt val" x="160" y="167">#531,206</text>
+    <text class="txt val" x="160" y="167">#531,601</text>
   </g>
   <g class="anim l-6">
     <text class="txt key" x="22" y="193">Contest Rating:</text>

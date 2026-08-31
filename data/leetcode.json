@@ -1,14 +1,14 @@
 {
   "username": "vivekjadhav07",
-  "total_solved": 301,
-  "easy_solved": 159,
-  "medium_solved": 134,
-  "hard_solved": 8,
-  "ranking": 495413,
-  "acceptance_rate": 72.0,
+  "total_solved": 0,
+  "easy_solved": 0,
+  "medium_solved": 0,
+  "hard_solved": 0,
+  "ranking": 0,
+  "acceptance_rate": 0.0,
   "contest_rating": 1542,
   "contest_ranking": 298144,
   "contests_attended": 6,
-  "updated_at": "2026-08-30T04:35:00.208921+00:00",
+  "updated_at": "2026-08-31T04:38:55.519762+00:00",
   "status": "OK"
 }
